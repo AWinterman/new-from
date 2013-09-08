@@ -1,0 +1,23 @@
+{
+  "name": "new-from",
+  "version": "0.0.2",
+  "description": "Modern version of dominictarr's from",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "awinterman/new-from"
+  },
+  "keywords": [
+    "from",
+    "stream",
+    "convenience"
+  ],
+  "author": "Andrew Winterman",
+  "license": "MIT",
+  "dependencies": {
+    "readable-stream": "~1.1.8"
+  }
+}
