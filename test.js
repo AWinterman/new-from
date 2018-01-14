@@ -17,9 +17,9 @@ var i = 0
 
 characters.on('data', function(data) {
   assert.equal(data, sentence[i++])
+  assert(i)
 })
 
-assert(i)
 
 
 
