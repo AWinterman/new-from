@@ -1,5 +1,6 @@
 var assert = require('assert')
   , from = require('./')
+  , Stream = require('stream').Stream
 
 var random = ['hello', 'goodbye', 1, 2, 3]
 
@@ -18,6 +19,10 @@ var i = 0
 characters.on('data', function(data) {
   assert.equal(data, sentence[i++])
   assert(i)
+})
+
+from(function() {
+	assert(this instanceof Stream)
 })
 
 
