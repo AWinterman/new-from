@@ -18,7 +18,7 @@ util.inherits(Producer, Readable)
 
 Producer.prototype._read = function() {
   // evaluate the source, and push the results.
-  this._source.call(this, this._index++)
+  this._source(this._index++)
 }
 
 // from
