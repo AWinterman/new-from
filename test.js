@@ -21,7 +21,8 @@ characters.on('data', function(data) {
   assert(i)
 })
 
-from(function() {
+from(function(index) {
+	assert(index === 0)
 	assert(this instanceof Stream)
 })
 
