@@ -8,6 +8,19 @@ if(Readable === undefined) {
   Readable = require('readable-stream')
 }
 
+function Producer(source, options) {
+  Readable.call(this, options)
+  this._index = 0
+  this._source = source
+}
+
+util.inherits(Producer, Readable)
+
+Producer.prototype._read = function() {
+  // evaluate the source, and push the results.
+  this._source.call(this, this._index++)
+}
+
 // from
 //
 // a stream that reads from an source.
@@ -20,18 +33,6 @@ function from(source, options) {
     source = source.slice()
 
     return from(streamify(source, options), options)
-  }
-
-  function Producer(source, options) {
-    Readable.call(this, options)
-    this._index = 0
-  }
-
-  util.inherits(Producer, Readable)
-
-  Producer.prototype._read = function() {
-    // evaluate the source, and push the results.
-    source.call(this, this._index++)
   }
 
   return new Producer(source, options)
