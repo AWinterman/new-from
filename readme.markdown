@@ -19,9 +19,9 @@ var zero_to_nine = from(make_chunk)
 
 function make_chunk(idx) {
   if(idx < 10) {
-    return idx
+    return this.push(idx.toString())
   }  
-  return null
+  return this.push(null)
 }
 
 // Or, in this case:
